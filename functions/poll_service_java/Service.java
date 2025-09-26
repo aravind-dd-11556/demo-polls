@@ -40,6 +40,13 @@ public class Service implements CatalystAdvancedIOHandler {
 	private JSONObject responseData = null;
 	private byte[] fileStream = null;
 
+	/**
+	 * Handle incoming HTTP requests, route them to the appropriate poll-related operation, and write the JSON or binary response.
+	 *
+	 * <p>Parses request URI and method to dispatch endpoints (poll listing, details, creation, voting, image download, user registration, etc.), sets the HTTP status, and writes either a JSON payload or an image byte stream to the response.</p>
+	 *
+	 * @throws Exception if an unexpected error occurs while processing the request
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public void runner(HttpServletRequest request, HttpServletResponse response) throws Exception {
