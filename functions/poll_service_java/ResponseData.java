@@ -17,6 +17,14 @@ public class ResponseData {
 	private Boolean ended = false;
 	private HashMap<String, Object> result = null;
 
+	/**
+	 * Constructs a ResponseData object from a poll row and associated voted data, producing
+	 * the final result map including poll fields, voted information, and ended/max-voted details.
+	 *
+	 * @param zcRowObject a row-like object containing poll fields (e.g., "Polls" columns such as ROWID, content, duration, category, votes)
+	 * @param votedData a map of vote-related data to merge into the final result
+	 * @throws Exception if duration validation or retrieval of maximum-polled option information fails
+	 */
 	ResponseData(ZCRowObject zcRowObject,HashMap<String, Object> votedData) throws Exception {
 		this.endedData = new HashMap<>();
 		this.result =new HashMap<>();
