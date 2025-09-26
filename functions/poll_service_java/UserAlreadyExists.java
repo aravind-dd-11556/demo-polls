@@ -14,7 +14,7 @@ public class UserAlreadyExists extends Exception {
 	@Override
 	public String getMessage() {
 		// TODO Auto-generated method stub
-		return 1;
+		return this.message;
 	}
 	
 }
